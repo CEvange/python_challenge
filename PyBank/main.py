@@ -2,7 +2,7 @@ import os
 import csv
 
 
-pybank_csv = os.path.join('..', "Resources", "budget_data.csv")
+pybank_csv = os.path.join('Resources','budget_data.csv')
 
 with open (pybank_csv) as csvfile:
     csvreader = csv.reader(csvfile,delimiter=",")
@@ -55,7 +55,7 @@ print (f'Greatest Increase in Profits: {total_months[m_inc]} (${great_inc})')
 print (f'Greatest Decrease in Profits: {total_months[m_dec]} (${great_dec})')
 
 
-filepath = os.path.join('..', "Analysis","pybank_output.txt")
+filepath = os.path.join('Analytics','pybank_output.txt')
 with open(filepath,'w') as file:
     file.write ('Financial Analysis')
     file.write ("\n")
