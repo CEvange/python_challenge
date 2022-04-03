@@ -14,16 +14,17 @@ with open (pypoll_csv) as csvfile:
  # The total number of votes cast
 
     for row in csvreader:
-        vote = str(row[0])
         cdd = str(row[2])
 
         total_votes = total_votes + 1
+
+# To get the candidates and total votes per candidate
         if cdd in candidate_total.keys():
             candidate_total[cdd] = candidate_total [cdd] + 1
         else: 
             candidate_total[cdd] = 1
 
-# Creates list of candidates, total votes for each candidate and percentage of votes 
+# Creates lists of candidates, total votes for each candidate and percentage of votes 
 
 cdd_list = []
 cdd_vote = []
@@ -34,7 +35,7 @@ for name,vote_count in candidate_total.items():
 
 percentage = []
 for number in cdd_vote:
-    percentage.append(round(number/total_votes*100,2))
+    percentage.append(round(number/total_votes*100,3))
 
 
 summary_table = list(zip(cdd_list, percentage, cdd_vote))
